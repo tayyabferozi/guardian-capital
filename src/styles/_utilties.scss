@@ -164,9 +164,30 @@ button {
 
   th {
     padding: 10px 26px 10px 10px;
+    cursor: pointer;
+    position: relative;
 
     &:not(:first-child) {
       text-align: center;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      right: 10px;
+      line-height: 9px;
+      font-size: 0.5em;
+    }
+
+    &::before {
+      bottom: 50%;
+      content: "▲";
+    }
+
+    &::after {
+      top: 50%;
+      content: "▼";
     }
   }
 }
