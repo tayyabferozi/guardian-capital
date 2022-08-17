@@ -31,7 +31,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgb(0 0 0 / 45%);
+  background-color: rgba(0, 0, 0, 0.45);
   display: flex;
   align-content: center;
   justify-content: center;
@@ -159,13 +159,40 @@ button {
   position: relative;
 }
 
-table.dataTable tbody tr {
+#listing table thead tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  th {
+    padding: 10px 26px 10px 10px;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+  }
+}
+#listing table tbody tr {
   &.odd,
   &:hover {
     background-color: #f9f9f9;
   }
 
-  .tag {
+  td,
+  th {
+    padding: 8px 10px;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .tag,
+  .prosper-icon,
+  .create-icon,
+  .a-icon {
     background: #eceae9;
     border-radius: 4px;
     padding: 6px 9px;
@@ -175,7 +202,15 @@ table.dataTable tbody tr {
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
 
-    &.blue {
+    &.blue,
+    &.prosper-icon {
+      border-radius: 5px;
+      background: #2a9988 !important;
+      color: #fff;
+      padding: 5px 10px;
+    }
+
+    &.create-icon {
       border-radius: 5px;
       background: #00388a !important;
       color: #fff;
@@ -190,4 +225,9 @@ table.dataTable tbody tr {
   table {
     min-width: 1100px;
   }
+}
+
+.dataTables_filter,
+.dataTables_info {
+  display: none;
 }

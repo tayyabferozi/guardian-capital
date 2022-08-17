@@ -1,13 +1,12 @@
 import clsx from "clsx";
-import React, { useState } from "react";
+import $ from "jquery";
+import React from "react";
 
 const FilterItem = ({ className, children, ...rest }) => {
-  const [isActive, setIsActive] = useState(false);
-
   return (
     <button
-      onClick={() => setIsActive((prevState) => !prevState)}
-      className={clsx(className, "filter-box-item", isActive && "active")}
+      onClick={(e) => $(e.target).toggleClass("active")}
+      className={clsx(className, "filter-box-item")}
       {...rest}
     >
       {children}{" "}
